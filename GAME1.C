@@ -65,6 +65,7 @@ void play0(struct Player p1) {
   printf("What do you do?\n");
   
   char act;
+  printf("Navigate with N, S, E, W\n");
   while(!(p1.x==0 && p1.y>=4)) {
     //if (act!='\n') printf("\b\b\b\b\b\bNSEW: ");
     //scanf("%c",&act);
@@ -72,10 +73,10 @@ void play0(struct Player p1) {
     scanf("%c",&act);
     switch(act) {
       case '?': printpos(p1); break;
-      case 'N': p1.y += 1; break;
+      case 'N': p1.y += 1; printf("*step*\n"); break;
       case 'E': printf("Your desk is in the way.\n"); break;
       case 'S':
-        if (p1.y>0) p1.y -= 1;
+        if (p1.y>0) {p1.y -= 1; printf("*step*\n");}
         else printf("Your bed is in the way.\n");
         break;
       case 'W': printf("Your bedroom wall is in the way.\n"); break;
